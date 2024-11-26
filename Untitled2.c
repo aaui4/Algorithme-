@@ -5,10 +5,10 @@
 char *ChargerChaine(int N) {
     char *chaine = (char *)malloc(N * sizeof(char));
     if (chaine == NULL) {
-        printf("Erreur d'allocation de mémoire\n");
-        return(1);
+        printf("Erreur d'allocation de mÃ©moire\n");
+        return 1;
     }
-    printf("Veuillez saisir la chaine de caractères :\n");
+    printf("Veuillez saisir la chaine de caractÃ¨res :\n");
     scanf("%s", chaine);
     return chaine;
 }
