@@ -1,5 +1,5 @@
 #include<stdio.h>
-main() 
+int main() 
 {int i,j,k;
 int matrice[4][4]={
 {1, 2, 3, 4},
