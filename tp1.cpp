@@ -1,5 +1,5 @@
 #include<stdio.h>
-main() 
+int main() 
 {int i,j;
  char matrice[5][5]={
     {'1','2','3','4','5'},
@@ -14,7 +14,7 @@ main()
    {
      for(j=0;j<5;j++)
      {
-     printf("%c",matrice[i][j]);
+     printf("%c  ",matrice[i][j]);
      }
   printf("\n");
   }
@@ -24,7 +24,7 @@ main()
    {
       for(j=0;j<5;j++)
       {
-      printf("%c",matrice[i][j]);
+      printf("%c  ",matrice[i][j]);
       }
    printf("\n");
   }
@@ -32,9 +32,9 @@ main()
  printf("Matrice avec les ligens d'indice impair de chaque linge:\n");
     for(i=0;i<5;i++)
     {
-      for(j=0;j<5;j+=2)
+      for(j=1;j<5;j+=2)
       {
-       printf("%c",matrice[i][j]);
+       printf("%c  ",matrice[i][j]);
       }
     printf("\n");
     }
