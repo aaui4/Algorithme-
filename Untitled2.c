@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 char *ChargerChaine(int N) {
-    char *chaine = (char *)malloc(N * sizeof(char));
+    char *chaine = (char *)malloc((N + 1) * sizeof(char)); 
     if (chaine == NULL) {
         printf("Erreur d'allocation de mémoire\n");
-        return 1;
+        return NULL; 
     }
     printf("Veuillez saisir la chaine de caractères :\n");
     scanf("%s", chaine);
@@ -14,23 +14,36 @@ char *ChargerChaine(int N) {
 }
 
 int Longueur(char *ch) {
-    return strlen(ch);
+    int l = 0;
+    while (ch[l] != '\0') {
+        l++;
+    }
+    return l;
 }
 
 void ChargerTab(char *p, char Tab[]) {
-    strcpy(Tab, p);
+    int i = 0;
+    while (p[i] != '\0') {
+        Tab[i] = p[i];
+        i++;
+    }
+    Tab[i] = '\0';
 }
 
 void InverserTab(char Tab[], char T[], int m) {
     int i;
-    for ( i = 0; i < m; i++) {
+    for (i = 0; i < m; i++) {
         T[i] = Tab[m - 1 - i];
     }
     T[m] = '\0';
 }
 
 void AfficherTab(char Tab[], int m) {
-    printf("%s\n", Tab);
+    int i;
+    for (i = 0; i < m; i++) {
+        printf("%c ", Tab[i]);
+    }
+    printf("\n");
 }
 
 int main() {
@@ -39,6 +52,9 @@ int main() {
     printf("Veuillez saisir la taille maximale de la chaine:\n");
     scanf("%d", &n);
     ch = ChargerChaine(n);
+    if (ch == NULL) {
+        return 1; // Termine le programme si l'allocation de mémoire échoue
+    }
     int m = Longueur(ch);
     char Tab[m + 1], T[m + 1];
     ChargerTab(ch, Tab);
