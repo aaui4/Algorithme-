@@ -8,7 +8,7 @@ typedef struct element {
 
 element* creerListe()
  {
-    return NULL;// قائمة فارغة
+    return NULL ;
 
  }
 
@@ -25,20 +25,19 @@ element* chargerListe(int Tab[], int K, element* liste)
     return liste;
 }
 
-// إجراء لعرض عناصر القائمة
 void afficherListe(element* L) {
     element* temp = L;
     while (temp != NULL) {
         printf("%d -> ", temp->val); // عرض قيمة العنصر
-        temp = temp->suivant; // الانتقال إلى العنصر التالي
+        temp = temp->suivant; 
     }
-    printf("NULL\n"); // نهاية القائمة
+    printf("NULL\n"); 
 }
 
 element* supprimerEnFin(element* L)
  {
     if (L == NULL)
-        return NULL; // قائمة فارغة
+        return NULL; 
 
     if (L->suivant == NULL)
     {
@@ -51,7 +50,7 @@ element* supprimerEnFin(element* L)
     {
     temp = temp->suivant; // الانتقال إلى العنصر قبل الأخير
     }
-     free(temp->suivant); // حذف العنصر الأخير
+     free(temp->suivant); 
      temp->suivant = NULL; // تعيين المؤشر إلى NULL
      return L;
  }
@@ -59,7 +58,7 @@ element* supprimerEnFin(element* L)
 element* ajouterEnDebut(element* L1, int val) {
     element* nouveau = (element*)malloc(sizeof(element));
     nouveau->val = val;
-    nouveau->suivant = L1;// ربط العنصر الجديد بالقائمة
+    nouveau->suivant = L1;
     return nouveau;
 }
 
@@ -67,7 +66,7 @@ void viderListe(element* L) {
     element* temp;
     while (L != NULL) {
         temp = L; // حفظ المؤشر الحالي
-        L = L->suivant; // الانتقال إلى العنصر التالي
+        L = L->suivant; 
         free(temp);
     }
     printf("La liste est vide\n");
