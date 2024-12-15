@@ -4,17 +4,17 @@
 char *ChargerChaine(int N) {
     char *chaine = (char *)malloc((N + 1) * sizeof(char));
     if (chaine == NULL) {
-        printf("Erreur d'allocation de mémoire\n");
+        printf("Erreur d'allocation de mÃ©moire\n");
         return NULL;
     }
-    printf("Veuillez saisir la chaine de caractères :\n");
+    printf("Veuillez saisir la chaine de caractÃ¨res :\n");
     scanf("%s", chaine);
     return chaine;
 }
 
 int Longueur(char *ch) {
     int l = 0;
-    while (ch[l] != '\0') { // ÍÓÇÈ Øæá ÇáÓáÓáÉ ÍÊì ÇáæÕæá Åáì äåÇíÉ ÇáÓáÓáÉ
+    while (ch[l] != '\0') { 
         l++;
     }
     return l;
@@ -26,35 +26,35 @@ void ChargerTab(char *p, char Tab[]) {
         Tab[i] = p[i];
         i++;
     }
-    Tab[i] = '\0'; // ÇÖÇİÉ \0 İí äåÇíÉ
+    Tab[i] = '\0'; // Ø§Ø¶Ø§ÙØ© \0 ÙÙŠ Ù†Ù‡Ø§ÙŠØ©
 }
 
 void InverserTab(char Tab[], char T[], int m) {
     int i;
     for (i = 0; i < m; i++) {
-        T[i] = Tab[m - 1 - i]; // ÚßÓ ÊÑÊíÈ ÇáÚäÇÕÑ İí ÇáÌÏæá
+        T[i] = Tab[m - 1 - i]; // Ø¹ÙƒØ³ ØªØ±ØªÙŠØ¨ Ø§Ù„Ø¹Ù†Ø§ØµØ± ÙÙŠ Ø§Ù„Ø¬Ø¯ÙˆÙ„
     }
     T[m] = '\0';
 }
 void AfficherTab(char Tab[], int m) {
-    printf("%s\n", Tab); // ÚÑÖ ÇáÓáÓáÉ
+    printf("%s\n", Tab); 
 }
 
 int main() {
     char *ch;
     int n;
-    printf("Veuillez saisir la taille maximale de la chaine:\n"); // ØáÈ ÅÏÎÇá ÍÌã ÇáÓáÓáÉ
+    printf("Veuillez saisir la taille maximale de la chaine:\n"); // Ø·Ù„Ø¨ Ø¥Ø¯Ø®Ø§Ù„ Ø­Ø¬Ù… Ø§Ù„Ø³Ù„Ø³Ù„Ø©
     scanf("%d", &n);
     ch = ChargerChaine(n);
     if (ch == NULL) {
-        return 1; // ÅäåÇÁ ÇáÈÑäÇãÌ İí ÍÇáÉ İÔá ÇáÊÎÕíÕ
+        return 1; // Ø¥Ù†Ù‡Ø§Ø¡ Ø§Ù„Ø¨Ø±Ù†Ø§Ù…Ø¬ ÙÙŠ Ø­Ø§Ù„Ø© ÙØ´Ù„ Ø§Ù„ØªØ®ØµÙŠØµ
     }
-    int m = Longueur(ch); // ÍÓÇÈ Øæá ÇáÓáÓáÉ
+    int m = Longueur(ch); // Ø­Ø³Ø§Ø¨ Ø·ÙˆÙ„ Ø§Ù„Ø³Ù„Ø³Ù„Ø©
     char Tab[m + 1], T[m + 1];
     ChargerTab(ch, Tab);
     AfficherTab(Tab, m);
     InverserTab(Tab, T, m);
     AfficherTab(T, m);
-    free(ch); // ÊÍÑíÑ ÇáĞÇßÑÉ ÇáãÎÕÕÉ
+    free(ch); // ØªØ­Ø±ÙŠØ± Ø§Ù„Ø°Ø§ÙƒØ±Ø© Ø§Ù„Ù…Ø®ØµØµØ©
     return 0;
 }
